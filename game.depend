@@ -1,0 +1,100 @@
+# depslib dependency file v1.0
+1743236478 source:c:\codeblock\game\main.cpp
+	<iostream>
+	<string>
+	<SDL.h>
+	<vector>
+	<SDL_mixer.h>
+	<cstdlib>
+	<SDL_image.h>
+	"defs.h"
+	"Obstacle.h"
+	"run.h"
+	"Graphics.h"
+	"buttom.h"
+	"Textureandmusic.h"
+
+1742483672 c:\codeblock\game\defs.h
+
+1742548828 c:\codeblock\game\graphics.h
+	<SDL.h>
+	<SDL_ttf.h>
+	<SDL_mixer.h>
+	<SDL_image.h>
+	"defs.h"
+
+1743176394 source:c:\codeblock\game\graphics.cpp
+	<iostream>
+	<SDL.h>
+	<SDL_ttf.h>
+	<SDL_mixer.h>
+	<SDL_image.h>
+	"defs.h"
+	"Graphics.h"
+
+1742463800 source:c:\codeblock\game\buttom.cpp
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	"Graphics.h"
+	"buttom.h"
+
+1742464072 c:\codeblock\game\buttom.h
+	<iostream>
+
+1743182934 source:c:\codeblock\game\obstacle.cpp
+	<SDL.h>
+	"defs.h"
+	"Obstacle.h"
+	"Graphics.h"
+
+1743182944 c:\codeblock\game\obstacle.h
+	"Graphics.h"
+
+1743156692 source:c:\codeblock\game\texture.cpp
+	<SDL.h>
+	<SDL_image.h>
+	"defs.h"
+	"Graphics.h"
+	"Texture.h"
+
+1743156677 c:\codeblock\game\texture.h
+	<SDL.h>
+	<SDL_image.h>
+	"Graphics.h"
+
+1743183105 source:c:\codeblock\game\textureandmusic.cpp
+	<SDL.h>
+	<string>
+	<SDL_image.h>
+	"defs.h"
+	"Graphics.h"
+	"Textureandmusic.h"
+
+1743183128 c:\codeblock\game\textureandmusic.h
+	"Graphics.h"
+
+1743173589 source:c:\codeblock\game\game.cpp
+
+1743236440 source:c:\codeblock\game\run.cpp
+	<SDL.h>
+	"defs.h"
+	"Graphics.h"
+	"Obstacle.h"
+	"buttom.h"
+	"Textureandmusic.h"
+	"run.h"
+
+1743237578 c:\codeblock\game\run.h
+	<string>
+	<vector>
+	<SDL.h>
+	<vector>
+	<SDL_mixer.h>
+	<SDL_image.h>
+	"defs.h"
+	"Graphics.h"
+	"Obstacle.h"
+	"buttom.h"
+	"Textureandmusic.h"
+
