@@ -12,6 +12,7 @@ void Texture::loadimage(Graphics &graphics){
     Obstacleimage=graphics.loadTexture("obstacle1-removebg-preview.png");
     playbuttom=graphics.loadTexture("playbuttom.png");
     retrybuttom=graphics.loadTexture("retrybuttom.png");
+    homebuttom=graphics.loadTexture("home.png");
     title=graphics.loadTexture("title.png");
     gameover=graphics.loadTexture("gameover.png");
 }
@@ -28,6 +29,8 @@ void Texture::destroyimage(){
     gameover=NULL;
     SDL_DestroyTexture(playbuttom);
     playbuttom=NULL;
+    SDL_DestroyTexture(homebuttom);
+    homebuttom=NULL;
     SDL_DestroyTexture(retrybuttom);
     retrybuttom=NULL;
     SDL_DestroyTexture(title);

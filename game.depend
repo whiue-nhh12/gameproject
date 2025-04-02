@@ -14,7 +14,7 @@
 	"buttom.h"
 	"Textureandmusic.h"
 
-1742483672 c:\codeblock\game\defs.h
+1743432776 c:\codeblock\game\defs.h
 
 1742548828 c:\codeblock\game\graphics.h
 	<SDL.h>
@@ -42,7 +42,7 @@
 1742464072 c:\codeblock\game\buttom.h
 	<iostream>
 
-1743182934 source:c:\codeblock\game\obstacle.cpp
+1743433097 source:c:\codeblock\game\obstacle.cpp
 	<SDL.h>
 	"defs.h"
 	"Obstacle.h"
@@ -63,7 +63,7 @@
 	<SDL_image.h>
 	"Graphics.h"
 
-1743183105 source:c:\codeblock\game\textureandmusic.cpp
+1743513872 source:c:\codeblock\game\textureandmusic.cpp
 	<SDL.h>
 	<string>
 	<SDL_image.h>
@@ -71,12 +71,12 @@
 	"Graphics.h"
 	"Textureandmusic.h"
 
-1743183128 c:\codeblock\game\textureandmusic.h
+1743513872 c:\codeblock\game\textureandmusic.h
 	"Graphics.h"
 
 1743173589 source:c:\codeblock\game\game.cpp
 
-1743236440 source:c:\codeblock\game\run.cpp
+1743514268 source:c:\codeblock\game\run.cpp
 	<SDL.h>
 	"defs.h"
 	"Graphics.h"
@@ -85,7 +85,7 @@
 	"Textureandmusic.h"
 	"run.h"
 
-1743237578 c:\codeblock\game\run.h
+1743513872 c:\codeblock\game\run.h
 	<string>
 	<vector>
 	<SDL.h>

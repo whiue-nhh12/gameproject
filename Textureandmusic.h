@@ -8,6 +8,7 @@ struct Texture{
     SDL_Texture*Obstacleimage;
     SDL_Texture*playbuttom;
     SDL_Texture*retrybuttom;
+    SDL_Texture*homebuttom;
     SDL_Texture*title;
     SDL_Texture*gameover;
     void loadimage(Graphics &graphics);

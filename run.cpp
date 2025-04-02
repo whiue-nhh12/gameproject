@@ -8,7 +8,7 @@
 using namespace std;
 bool collisionhandling(SDL_Rect ship,Obstacle &obstacle,vector<Obstacle> Obs,Mix_Chunk*govercome,int&score,Graphics &graphics)
 {
-    if (ship.x>obstacle.x+70&&!obstacle.passed) {
+    if (ship.x>obstacle.x+OBSTACLE_WIDTH/2&&!obstacle.passed) {
             graphics.play(govercome);
             score++;
             obstacle.passed=true;
@@ -16,8 +16,8 @@ bool collisionhandling(SDL_Rect ship,Obstacle &obstacle,vector<Obstacle> Obs,Mix
             return false;
     }
     if (ship.x+ship.w<obstacle.x) return false;
-    SDL_Rect top = {obstacle.x, 0, 140, obstacle.height };
-    SDL_Rect bottom={obstacle.x,obstacle.height+OBSTACLE_GAP,140,SCREEN_HEIGHT-OBSTACLE_GAP-obstacle.height};
+    SDL_Rect top = {obstacle.x, 0, OBSTACLE_WIDTH, obstacle.height };
+    SDL_Rect bottom={obstacle.x,obstacle.height+OBSTACLE_GAP,OBSTACLE_WIDTH,SCREEN_HEIGHT-OBSTACLE_GAP-obstacle.height};
 
     return SDL_HasIntersection(&ship, &top) || SDL_HasIntersection(&ship, &bottom);
 }
@@ -29,7 +29,8 @@ void rungaming::initeverything(){
     color = {255, 255, 0, 0};
     shipsize={100,20,100,100};
     play.rect={SCREEN_WIDTH/2-100,SCREEN_HEIGHT-200,200,150};
-    retry.rect={SCREEN_WIDTH/2-100,SCREEN_HEIGHT-200,200,150};
+    retry.rect={SCREEN_WIDTH/2-200,SCREEN_HEIGHT-200,200,150};
+    home.rect={SCREEN_WIDTH/2,SCREEN_HEIGHT-200,200,150};
     score=0;
     current="MENU";
     gameOverSoundPlayed =false;
@@ -45,7 +46,8 @@ void rungaming::gameover(){
     SDL_RenderCopy(graphics.renderer,texture.background,NULL,NULL);
     texture.dislayFont(score,color,graphics,font);
     graphics.renderTexture(texture.gameover,SCREEN_WIDTH/2-250,0,500,400);
-    graphics.renderTexture(texture.retrybuttom,SCREEN_WIDTH/2-100,SCREEN_HEIGHT-200,200,150);
+    graphics.renderTexture(texture.retrybuttom,SCREEN_WIDTH/2-200,SCREEN_HEIGHT-200,200,150);
+    graphics.renderTexture(texture.homebuttom,SCREEN_WIDTH/2,SCREEN_HEIGHT-200,200,150);
     SDL_RenderPresent(graphics.renderer);
 }
 void rungaming::menu(){
@@ -66,6 +68,11 @@ void rungaming::rungame(){
                     current="PLAY";
                 }else if(current=="GAMEOVER"&&retry.isClicked(mouseclickx,mouseclicky)){
                     current="PLAY";
+                    gameOverSoundPlayed=false;
+                    score=0;
+                    Obs.clear();
+                }else if(current=="GAMEOVER"&&home.isClicked(mouseclickx,mouseclicky)){
+                    current="MENU";
                     gameOverSoundPlayed=false;
                     score=0;
                     Obs.clear();

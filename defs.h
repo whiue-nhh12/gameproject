@@ -5,6 +5,7 @@ const int SCREEN_HEIGHT = 600;
 const int OBSTACLE_SPEED = 15;
 const  int OBSTACLE_GAP = 150;
 const int OBSTACLE_SPAWN_RATE = 70;
+const int OBSTACLE_WIDTH=140;
 #define WINDOW_TITLE "OVERCOMEGAME"
 #endif
 
