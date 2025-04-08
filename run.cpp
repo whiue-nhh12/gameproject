@@ -70,12 +70,12 @@ void rungaming::rungame(){
                     current="PLAY";
                     gameOverSoundPlayed=false;
                     score=0;
-                    Obs.clear();
+                    Obslist.clear();
                 }else if(current=="GAMEOVER"&&home.isClicked(mouseclickx,mouseclicky)){
                     current="MENU";
                     gameOverSoundPlayed=false;
                     score=0;
-                    Obs.clear();
+                    Obslist.clear();
                 }
             }
             if(event.type==SDL_MOUSEMOTION&&current=="PLAY"){
@@ -93,15 +93,15 @@ void rungaming::rungame(){
         if(current=="PLAY"){
         if(spawn%OBSTACLE_SPAWN_RATE==0){
             int height=rand()%(SCREEN_HEIGHT-OBSTACLE_GAP);
-            Obs.push_back({SCREEN_WIDTH,height});
+            Obslist.push_back({SCREEN_WIDTH,height});
 
         }
         spawn++;
-        for (auto& move : Obs) {
+        for (auto& move : Obslist) {
             move.x -= OBSTACLE_SPEED;
         }
-            for(auto &obss:Obs){
-                if(collisionhandling(shipsize,obss,Obs,music.govercome,score,graphics)){
+            for(auto &obss:Obslist){
+                if(collisionhandling(shipsize,obss,Obslist,music.govercome,score,graphics)){
                     current="GAMEOVER";
                     break;
                 }
@@ -111,7 +111,7 @@ void rungaming::rungame(){
         graphics.render(texture.backgroundscoll);
         texture.dislayFont(score,color,graphics,font);
         SDL_RenderCopy(graphics.renderer,texture.ship,NULL,&shipsize);
-        for(auto obstacle:Obs){
+        for(auto obstacle:Obslist){
             obstacle.render(graphics,obstacle,texture.Obstacleimage);
         }
         SDL_RenderPresent(graphics.renderer);

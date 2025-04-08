@@ -16,7 +16,7 @@ struct rungaming{
     Graphics graphics;
     Texture texture;
     Music music;
-    vector<Obstacle> Obs;
+    vector<Obstacle> Obslist;
     Buttom play, retry,home;
     TTF_Font* font;
     SDL_Color color;
