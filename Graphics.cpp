@@ -16,7 +16,7 @@ void ScrollingBackground::scroll(int distance) {
 }
 void Graphics::logErrorandExit(const char *msg,const char*error)
 {
-    SDL_LogMessage(SDL_LOG_CATEGORY_APPLICATION,SDL_LOG_PRIORITY_ERROR,"%S:%S",msg,error);
+    SDL_LogMessage(SDL_LOG_CATEGORY_APPLICATION,SDL_LOG_PRIORITY_ERROR,"%s:%s",msg,error);
         SDL_Quit();
 }
 void Graphics::init()
