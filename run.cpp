@@ -27,10 +27,10 @@ void rungaming::initeverything(){
     music.initmusic(graphics);
     font = graphics.loadFont("Purisa-BoldOblique.ttf",48);
     color = {255, 255, 0, 0};
-    shipsize={100,20,100,100};
-    play.rect={SCREEN_WIDTH/2-100,SCREEN_HEIGHT-200,200,150};
-    retry.rect={SCREEN_WIDTH/2-200,SCREEN_HEIGHT-200,200,150};
-    home.rect={SCREEN_WIDTH/2,SCREEN_HEIGHT-200,200,150};
+    shipsize={Ship_X,Ship_Y,Ship_Width,Ship_Height};
+    play.rect={SCREEN_WIDTH/2-100,SCREEN_HEIGHT-200,Button_Width,Button_Height};
+    retry.rect={SCREEN_WIDTH/2-200,SCREEN_HEIGHT-200,Button_Width,Button_Height};
+    home.rect={SCREEN_WIDTH/2,SCREEN_HEIGHT-200,Button_Width,Button_Height};
     score=0;
     current="MENU";
     gameOverSoundPlayed =false;
@@ -45,15 +45,15 @@ void rungaming::gameover(){
     }
     SDL_RenderCopy(graphics.renderer,texture.background,NULL,NULL);
     texture.dislayFont(score,color,graphics,font);
-    graphics.renderTexture(texture.gameover,SCREEN_WIDTH/2-250,0,500,400);
-    graphics.renderTexture(texture.retrybuttom,SCREEN_WIDTH/2-200,SCREEN_HEIGHT-200,200,150);
-    graphics.renderTexture(texture.homebuttom,SCREEN_WIDTH/2,SCREEN_HEIGHT-200,200,150);
+    graphics.renderTexture(texture.gameover,SCREEN_WIDTH/2-250,0,Title_Width,Title_Height);
+    graphics.renderTexture(texture.retrybuttom,SCREEN_WIDTH/2-200,SCREEN_HEIGHT-200,Button_Width,Button_Height);
+    graphics.renderTexture(texture.homebuttom,SCREEN_WIDTH/2,SCREEN_HEIGHT-200,Button_Width,Button_Height);
     SDL_RenderPresent(graphics.renderer);
 }
 void rungaming::menu(){
     SDL_RenderCopy(graphics.renderer,texture.background,NULL,NULL);
-    graphics.renderTexture(texture.title,SCREEN_WIDTH/2-250,0,500,400);
-    graphics.renderTexture(texture.playbuttom,SCREEN_WIDTH/2-100,SCREEN_HEIGHT-200,200,150);
+    graphics.renderTexture(texture.title,SCREEN_WIDTH/2-250,0,Title_Width,Title_Height);
+    graphics.renderTexture(texture.playbuttom,SCREEN_WIDTH/2-100,SCREEN_HEIGHT-200,Button_Width,Button_Height);
     SDL_RenderPresent(graphics.renderer);
 }
 void rungaming::rungame(){
