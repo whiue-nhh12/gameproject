@@ -25,8 +25,6 @@ void rungaming::initeverything(){
     graphics.init();
     texture.loadimage(graphics);
     music.initmusic(graphics);
-    font = graphics.loadFont("Purisa-BoldOblique.ttf",48);
-    color = {255, 255, 0, 0};
     shipsize={Ship_X,Ship_Y,Ship_Width,Ship_Height};
     play.rect={SCREEN_WIDTH/2-100,SCREEN_HEIGHT-200,Button_Width,Button_Height};
     retry.rect={SCREEN_WIDTH/2-200,SCREEN_HEIGHT-200,Button_Width,Button_Height};
@@ -44,7 +42,7 @@ void rungaming::gameover(){
         gameOverSoundPlayed=true;
     }
     SDL_RenderCopy(graphics.renderer,texture.background,NULL,NULL);
-    texture.dislayFont(score,color,graphics,font);
+    texture.dislayFont(score,graphics);
     graphics.renderTexture(texture.gameover,SCREEN_WIDTH/2-250,0,Title_Width,Title_Height);
     graphics.renderTexture(texture.retrybuttom,SCREEN_WIDTH/2-200,SCREEN_HEIGHT-200,Button_Width,Button_Height);
     graphics.renderTexture(texture.homebuttom,SCREEN_WIDTH/2,SCREEN_HEIGHT-200,Button_Width,Button_Height);
@@ -100,22 +98,22 @@ void rungaming::rungame(){
         for (auto& move : Obslist) {
             move.x -= OBSTACLE_SPEED;
         }
-            for(auto &obss:Obslist){
-                if(collisionhandling(shipsize,obss,Obslist,music.govercome,score,graphics)){
-                    current="GAMEOVER";
-                    break;
-                }
-            }
         SDL_RenderClear(graphics.renderer);
         texture.backgroundscoll.scroll(1);
         graphics.render(texture.backgroundscoll);
-        texture.dislayFont(score,color,graphics,font);
+        texture.dislayFont(score,graphics);
         SDL_RenderCopy(graphics.renderer,texture.ship,NULL,&shipsize);
         for(auto obstacle:Obslist){
             obstacle.render(graphics,obstacle,texture.Obstacleimage);
         }
         SDL_RenderPresent(graphics.renderer);
-        SDL_Delay(13);
+        for(auto &obss:Obslist){
+            if(collisionhandling(shipsize,obss,Obslist,music.govercome,score,graphics)){
+                current="GAMEOVER";
+                break;
+            }
+        }
+        SDL_Delay(10);
         }
     }
 }

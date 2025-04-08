@@ -14,6 +14,8 @@ const int Button_Width=200;
 const int Button_Height=150;
 const int Title_Height=400;
 const int Title_Width=500;
+const int Font_Width=200;
+const int Font_Height=200;
 #define WINDOW_TITLE "OVERCOMEGAME"
 #endif
 

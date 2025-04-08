@@ -15,6 +15,8 @@ void Texture::loadimage(Graphics &graphics){
     homebuttom=graphics.loadTexture("home.png");
     title=graphics.loadTexture("title.png");
     gameover=graphics.loadTexture("gameover.png");
+    font = graphics.loadFont("Purisa-BoldOblique.ttf",48);
+    color = {255, 255, 0, 0};
 }
 void Texture::destroyimage(){
     SDL_DestroyTexture( ship );
@@ -36,10 +38,10 @@ void Texture::destroyimage(){
     SDL_DestroyTexture(title);
     title=NULL;
 }
-void Texture::dislayFont(int &score,SDL_Color color,Graphics graphics,TTF_Font *font){
+void Texture::dislayFont(int &score,Graphics &graphics){
     string scorestr="SCORE: "+to_string(score);
     SDL_Texture* helloText = graphics.renderText(scorestr.c_str(),font,color);
-    graphics.renderTexture(helloText,SCREEN_WIDTH-200,0,200,200);
+    graphics.renderTexture(helloText,SCREEN_WIDTH-200,0,Font_Width,Font_Height);
 }
 void Music::initmusic(Graphics &graphics){
     gMusic = graphics.loadMusic("thememusic.mp3");

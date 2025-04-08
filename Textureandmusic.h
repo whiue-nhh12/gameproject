@@ -11,9 +11,11 @@ struct Texture{
     SDL_Texture*homebuttom;
     SDL_Texture*title;
     SDL_Texture*gameover;
+    SDL_Color color;
+    TTF_Font *font;
     void loadimage(Graphics &graphics);
     void destroyimage();
-    void dislayFont(int &score,SDL_Color color,Graphics graphics,TTF_Font *font);
+    void dislayFont(int &score,Graphics &graphics);
 };
 struct Music{
     Mix_Music *gMusic;

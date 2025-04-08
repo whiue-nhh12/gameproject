@@ -7,7 +7,7 @@
 #include"defs.h"
 struct ScrollingBackground {
     SDL_Texture* texture;
-    int scrollingOffset = 0;
+    int scrollingOffset =0;
     int width, height;
     void setTexture(SDL_Texture* _texture);
     void scroll(int distance);
